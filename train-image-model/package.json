@@ -1,0 +1,15 @@
+{
+  "name": "image-classification-node",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "image_classification.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.22.0"
+  }
+}

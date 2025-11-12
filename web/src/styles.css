@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dropzone {
+  border: 2px dashed black;
+  height: 300px;
+  border-radius: 5px;
+}

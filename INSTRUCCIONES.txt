@@ -1,0 +1,144 @@
+INSTRUCCIONES PARA EJECUTAR EL PROYECTO WEB
+============================================
+
+Este documento contiene las instrucciones paso a paso para ejecutar la aplicación web de clasificación de basura.
+
+REQUISITOS PREVIOS
+------------------
+
+1. INSTALAR NODE.JS Y NPM
+
+   Opción 1: Descargar desde el sitio oficial
+   - Visita https://nodejs.org/
+   - Descarga la versión LTS (Long Term Support) recomendada
+   - Ejecuta el instalador y sigue las instrucciones
+   - El instalador incluye npm automáticamente
+
+   Opción 2: Usar Homebrew (en macOS)
+   - Abre la terminal
+   - Ejecuta: brew install node
+
+   Opción 3: Usar nvm (Node Version Manager) - Recomendado para desarrolladores
+   - Instala nvm desde: https://github.com/nvm-sh/nvm
+   - Ejecuta: nvm install --lts
+   - Ejecuta: nvm use --lts
+
+2. VERIFICAR LA INSTALACIÓN
+   - Abre una terminal
+   - Verifica Node.js: node --version
+     (Debería mostrar algo como v18.x.x o v20.x.x)
+   - Verifica npm: npm --version
+     (Debería mostrar algo como 9.x.x o 10.x.x)
+
+
+PASOS PARA EJECUTAR EL PROYECTO
+--------------------------------
+
+1. ABRIR LA TERMINAL
+   - En macOS: Abre la aplicación Terminal
+   - En Windows: Abre Command Prompt o PowerShell
+   - En Linux: Abre tu terminal preferida
+
+2. NAVEGAR A LA CARPETA DEL PROYECTO
+   cd /ruta/a/garbage-classification/web
+
+   Ejemplo:
+   cd /Users/42849/Documents/Code/garbage-classification/web
+
+3. INSTALAR LAS DEPENDENCIAS
+   npm install
+
+   Este comando:
+   - Lee el archivo package.json
+   - Descarga todas las librerías necesarias
+   - Crea una carpeta node_modules con todas las dependencias
+   - Puede tardar algunos minutos la primera vez
+
+4. EJECUTAR EL SERVIDOR DE DESARROLLO
+   npm run dev
+
+   Este comando:
+   - Inicia un servidor de desarrollo local
+   - Compila la aplicación React
+   - Abre el navegador automáticamente (o muestra la URL)
+   - Habilita hot-reload (recarga automática al hacer cambios)
+
+5. ACCEDER A LA APLICACIÓN
+   - El servidor mostrará una URL en la terminal (generalmente http://localhost:5173)
+   - Abre tu navegador web
+   - Visita la URL mostrada
+   - ¡La aplicación debería estar funcionando!
+
+
+COMANDOS ÚTILES
+---------------
+
+- Detener el servidor: Presiona Ctrl + C en la terminal
+
+- Limpiar instalación:
+  rm -rf node_modules package-lock.json
+  npm install
+
+- Compilar para producción:
+  npm run build
+
+- Vista previa de la versión de producción:
+  npm run preview
+
+
+SOLUCIÓN DE PROBLEMAS
+---------------------
+
+Problema: Error "command not found: node" o "command not found: npm"
+Solución: Node.js no está instalado correctamente. Revisa la sección de instalación.
+
+Problema: Error durante npm install
+Solución: 
+  - Asegúrate de tener conexión a internet
+  - Intenta eliminar node_modules y package-lock.json, luego ejecuta npm install nuevamente
+  - Verifica que tu versión de Node.js sea compatible (16.x o superior)
+
+Problema: El puerto 5173 ya está en uso
+Solución: 
+  - Cierra otras instancias del servidor
+  - O usa otro puerto: npm run dev -- --port 3000
+
+Problema: La página se carga pero muestra errores
+Solución:
+  - Verifica que los modelos estén en public/assets/models/
+  - Revisa la consola del navegador para más detalles
+  - Verifica la consola de la terminal para errores del servidor
+
+
+ESTRUCTURA DEL PROYECTO WEB
+---------------------------
+
+web/
+├── public/              # Archivos estáticos
+│   └── assets/
+│       └── models/      # Modelos de TensorFlow.js
+├── src/                 # Código fuente
+│   ├── components/      # Componentes React
+│   ├── utils/           # Utilidades
+│   └── App.jsx          # Componente principal
+├── package.json         # Configuración y dependencias
+└── vite.config.js       # Configuración de Vite
+
+
+DEPENDENCIAS PRINCIPALES
+------------------------
+
+- React: Framework de UI
+- TensorFlow.js: Machine learning en el navegador
+- Vite: Build tool y servidor de desarrollo
+
+
+NOTAS ADICIONALES
+----------------
+
+- El proyecto usa Vite como bundler, que es muy rápido para desarrollo
+- Los modelos de ML se cargan desde la carpeta public/assets/models/
+- La aplicación incluye clasificación de imágenes y texto
+- Se requiere un navegador moderno con soporte para ES6+
+
+Para más información, consulta el archivo README.md en la carpeta web/
